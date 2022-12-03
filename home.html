@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+        </head>
+    <div class="content">
+        <h1>TEST YOUR STRESS</h1>
+        <p class="par">Understanding your current <br>level of stress is the first step<br> in taking control</p>
+        <button class="cn"><a href="{{url_for('stress_form')}}">START</a></button>
+    </div>
+    </body>
+</html>

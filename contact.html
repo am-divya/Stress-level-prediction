@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>CONTACTUS</title>
+        <link rel="stylesheet" href="/home/student/Desktop/miniproject/style.css">
+    </head>
+    <body>
+        <div class="contact">
+           <h1>Say Hello</h1>
+           <h2>We are always ready to serve you!</h2>
+        </div>
+        <div class="contact-form">
+            <form id="contact-form" onsubmit="sendEmail();reset(); return false;">
+                <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+                <br>
+                <input name="email" type="email" class="form-control" placeholder=" Your Email" required><br>
+                <input name="email" type="phone" class="form-control" placeholder=" Phone no." required><br>
+                <textarea name="Message" class="form-control" placeholder="Message" row="4" required></textarea><br>
+                <input type="submit" class="form-control submit" value="SEND MESSAGE">
+            </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+    Username : "sangireddydivya111@gmail.com",
+    Password : "divyadivya",
+    To : 'leelakondeti79@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contatct Form Enquiry",
+    Body : "Name:" + document.getElementById("name").value
+           +"<br>Email:" + document.getElementById("email").value
+           +"<br>Phone no:" + document.getElementById("phone").value
+           +"<br>Message:" + document.getElementById("message").value
+}).then(
+  message => alert("Message Sdent Successfullys")
+ 
+);
+            }
+        </script>
+    </body>
+</html>
